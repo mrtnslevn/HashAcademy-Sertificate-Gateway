@@ -106,7 +106,7 @@ defineProps({
           >
             <form class="flex flex-col md:flex-row">
               <input
-                type="email"
+                type="text"
                 placeholder="Masukan kode unik anda"
                 class="flex-1 h-10 px-4 py-2 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0"
               />
