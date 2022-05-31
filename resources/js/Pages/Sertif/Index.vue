@@ -24,6 +24,7 @@ import Welcome from "@/Jetstream/Welcome.vue";
                       <!-- <input type="checkbox" class="checkbox" /> -->
                     </label>
                   </th>
+                  <th>ID Sertifikat</th>
                   <th>Nama</th>
                   <th>Kegiatan</th>
                   <th>Tanggal Rilis</th>
@@ -40,20 +41,26 @@ import Welcome from "@/Jetstream/Welcome.vue";
                   </th>
                   <td>
                     <div class="flex items-center space-x-3">
+                      <div class="badge badge-info">1234qwer123</div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="flex items-center space-x-3">
                       <div>
-                        <div class="font-bold">Hart Hagerty</div>
-                        <div class="text-sm opacity-50">United States</div>
+                        <div class="font-bold">
+                          Martinus Rexyfarrel Evan Sayoga
+                        </div>
+                        <span class="badge badge-warning badge-sm"
+                          >id: 12349687768</span
+                        >
                       </div>
                     </div>
                   </td>
                   <td>
-                    Zemlak, Daniel and Leannon
+                    MBKM Bersertifikat resmi
                     <br />
-                    <span class="badge badge-ghost badge-sm"
-                      >Desktop Support Technician</span
-                    >
                   </td>
-                  <td>Purple</td>
+                  <td>14/06/2022</td>
                   <th>
                     <button class="btn btn-ghost px-5 py-3">
                       edit<svg
