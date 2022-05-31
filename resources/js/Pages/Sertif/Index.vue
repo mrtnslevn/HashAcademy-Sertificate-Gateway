@@ -1,0 +1,84 @@
+<script setup>
+import AppLayout from "@/Layouts/AppLayout.vue";
+import Welcome from "@/Jetstream/Welcome.vue";
+</script>
+
+<template>
+  <AppLayout title="Dashboard">
+    <template #header>
+      <h2 class="font-semibold text-xl text-slate-300 leading-tight">
+        Sertifikat HashAcademy
+      </h2>
+    </template>
+
+    <div class="py-12">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
+          <div class="overflow-x-auto w-full">
+            <table class="table w-full bg-gray-800">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th>
+                    <label>
+                      <!-- <input type="checkbox" class="checkbox" /> -->
+                    </label>
+                  </th>
+                  <th>Nama</th>
+                  <th>Kegiatan</th>
+                  <th>Tanggal Rilis</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- row 1 -->
+                <tr>
+                  <th>
+                    <label>
+                      <!-- <input type="checkbox" class="checkbox" /> -->
+                    </label>
+                  </th>
+                  <td>
+                    <div class="flex items-center space-x-3">
+                      <div>
+                        <div class="font-bold">Hart Hagerty</div>
+                        <div class="text-sm opacity-50">United States</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    Zemlak, Daniel and Leannon
+                    <br />
+                    <span class="badge badge-ghost badge-sm"
+                      >Desktop Support Technician</span
+                    >
+                  </td>
+                  <td>Purple</td>
+                  <th>
+                    <button class="btn btn-ghost px-5 py-3">
+                      edit<svg
+                        class="ml-4 w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </th>
+                </tr>
+              </tbody>
+              <!-- foot -->
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </AppLayout>
+</template>
