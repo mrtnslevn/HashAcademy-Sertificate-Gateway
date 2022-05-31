@@ -42,15 +42,15 @@ defineProps({
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
         <div class="flex-1 md:flex md:items-center md:justify-between">
           <div class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
-            <a
+            <Link
               href="#"
               class="px-5 py-2 mx-2 mt-2 text-sm font-semibold text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 lg:text-md dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700"
-              >Cari Sertifikat</a
+              >Cari Sertifikat</Link
             >
-            <a
+            <Link
               href="#"
               class="px-5 py-2 mx-2 mt-2 text-sm font-semibold text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700"
-              >Tempat Pengaduan</a
+              >Tempat Pengaduan</Link
             >
           </div>
         </div>

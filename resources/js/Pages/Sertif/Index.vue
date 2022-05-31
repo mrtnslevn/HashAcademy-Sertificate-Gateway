@@ -14,6 +14,26 @@ import Welcome from "@/Jetstream/Welcome.vue";
     <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
+          <div class="flex justify-end pb-4">
+            <a
+              href="#"
+              class="btn btn-info hover:bg-cyan-700 hover:border-cyan-700"
+              ><svg
+                class="w-5 h-5 mr-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                ></path></svg
+              >Buat Baru</a
+            >
+          </div>
           <div class="overflow-x-auto w-full">
             <table class="table w-full bg-gray-800">
               <!-- head -->
