@@ -26,7 +26,7 @@ class SertifController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Sertif/Create');
     }
 
     /**

@@ -1,6 +1,5 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import Welcome from "@/Jetstream/Welcome.vue";
 </script>
 
 <template>
@@ -16,7 +15,7 @@ import Welcome from "@/Jetstream/Welcome.vue";
         <div class="bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
           <div class="flex justify-end pb-4">
             <a
-              href="#"
+              :href="route('sertif.create')"
               class="btn btn-info hover:bg-cyan-700 hover:border-cyan-700"
               ><svg
                 class="w-5 h-5 mr-3"
@@ -49,6 +48,7 @@ import Welcome from "@/Jetstream/Welcome.vue";
                   <th>Kegiatan</th>
                   <th>Tanggal Rilis</th>
                   <th></th>
+                  ````````
                 </tr>
               </thead>
               <tbody>
