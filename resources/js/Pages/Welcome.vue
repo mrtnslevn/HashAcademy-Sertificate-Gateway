@@ -1,10 +1,12 @@
 <script setup>
 import { Head, Link } from "@inertiajs/inertia-vue3";
+import { ref } from "vue";
 import AppBawah from "../Layouts/AppBawah.vue";
 defineProps({
   canLogin: Boolean,
   canRegister: Boolean,
 });
+const NavbarResponsiveOpen = ref(false);
 </script>
 
 <template>
@@ -28,19 +30,48 @@ defineProps({
               type="button"
               class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
               aria-label="toggle menu"
+              @click="NavbarResponsiveOpen = !NavbarResponsiveOpen"
             >
               <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
                 <path
+                  :class="{
+                    hidden: NavbarResponsiveOpen,
+                    'inline-flex': !NavbarResponsiveOpen,
+                  }"
                   fill-rule="evenodd"
                   d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
                 ></path>
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    :class="{
+                      hidden: !NavbarResponsiveOpen,
+                      'inline-flex': NavbarResponsiveOpen,
+                    }"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
               </svg>
             </button>
           </div>
         </div>
 
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-        <div class="flex-1 md:flex md:items-center md:justify-between">
+        <div
+          class="flex-1 md:flex md:items-center md:justify-between"
+          :class="{
+            block: NavbarResponsiveOpen,
+            hidden: !NavbarResponsiveOpen,
+          }"
+        >
           <div class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
             <Link
               href="#"

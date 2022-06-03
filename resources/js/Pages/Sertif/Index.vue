@@ -1,5 +1,7 @@
 <script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
+
+// const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
@@ -10,7 +12,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
       </h2>
     </template>
 
-    <div class="py-12">
+    <div class="py-6 px-4 md:px-14 md:py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
           <div class="flex justify-end pb-4">
@@ -38,27 +40,16 @@ import AppLayout from "@/Layouts/AppLayout.vue";
               <!-- head -->
               <thead>
                 <tr>
-                  <th>
-                    <label>
-                      <!-- <input type="checkbox" class="checkbox" /> -->
-                    </label>
-                  </th>
                   <th>ID Sertifikat</th>
                   <th>Nama</th>
                   <th>Kegiatan</th>
                   <th>Tanggal Rilis</th>
                   <th></th>
-                  ````````
                 </tr>
               </thead>
               <tbody>
                 <!-- row 1 -->
                 <tr>
-                  <th>
-                    <label>
-                      <!-- <input type="checkbox" class="checkbox" /> -->
-                    </label>
-                  </th>
                   <td>
                     <div class="flex items-center space-x-3">
                       <div class="badge badge-info">1234qwer123</div>
