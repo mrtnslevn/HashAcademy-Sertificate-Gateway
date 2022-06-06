@@ -1,13 +1,11 @@
 <script setup>
 import { Head, Link } from "@inertiajs/inertia-vue3";
 import { ref } from "vue";
-import AppBawah from "../Layouts/AppBawah.vue";
+import AppBawah from "../../Layouts/AppBawah.vue";
 defineProps({
   canLogin: Boolean,
   canRegister: Boolean,
-  qrCode: String,
 });
-
 const NavbarResponsiveOpen = ref(false);
 </script>
 
@@ -119,9 +117,9 @@ const NavbarResponsiveOpen = ref(false);
   </nav>
 
   <!-- isi dari halaman cari -->
-  <div class="text-center mb-auto">
+  <div class="text-center">
     <section class="bg-white dark:bg-gray-800">
-      <div class="container px-6 py-16 2xl:py-20 mx-auto text-center">
+      <div class="container px-6 py-16 2xl:py-44 mx-auto text-center">
         <div class="max-w-lg mx-auto">
           <h1
             class="text-3xl font-bold text-gray-800 dark:text-white md:text-4xl"
@@ -176,13 +174,6 @@ const NavbarResponsiveOpen = ref(false);
         <div class="flex-grow border-t-4 rounded border-gray-700"></div>
         <span class="flex-shrink mx-4 text-gray-500">Content</span>
         <div class="flex-grow border-t-4 rounded border-gray-700"></div>
-      </div>
-
-      <div>
-        <div class="flex justify-center">
-          <div>{{ qrCode }}</div>
-          <img src="{{url('/qrcode.svg')}}" alt="" />
-        </div>
       </div>
     </div>
   </div>

@@ -73,7 +73,10 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                   </td>
                   <td>14/06/2022</td>
                   <th>
-                    <a href="" class="btn btn-ghost px-5 py-3">
+                    <router-link
+                      :href="route('sertif.edit')"
+                      class="btn btn-ghost px-5 py-3"
+                    >
                       edit<svg
                         class="ml-4 w-4 h-4"
                         fill="none"
@@ -88,7 +91,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                           d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                         ></path>
                       </svg>
-                    </a>
+                    </router-link>
                   </th>
                 </tr>
               </tbody>

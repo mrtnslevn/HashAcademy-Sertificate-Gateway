@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\sertif;
+use App\Models\QrGenerator;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use SimpleSoftwareIO\QrCode\Generator;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
-class SertifController extends Controller
+class QrController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,13 @@ class SertifController extends Controller
      */
     public function index()
     {
-        // $sertifs = sertif::all();
-        return Inertia::render('Sertif/Index');
+    // $qrcode = new Genera
+    // $data   = $qrcode->size(200)->generate('Make a qrcode without Laravel!');
+
+    //$data = QrCode::generate('coba generator qr');
+    $var = (string)QrCode::format('svg')->margin(0)->size(200)->generate('test qr');
+
+    return Inertia::render('/QrCode/Index', compact('var'));
     }
 
     /**
@@ -26,7 +33,7 @@ class SertifController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Sertif/Create');
+        //
     }
 
     /**
@@ -43,10 +50,10 @@ class SertifController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\sertif  $sertif
+     * @param  \App\Models\QrGenerator  $qrGenerator
      * @return \Illuminate\Http\Response
      */
-    public function show(sertif $sertif)
+    public function show(QrGenerator $qrGenerator)
     {
         //
     }
@@ -54,22 +61,22 @@ class SertifController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\sertif  $sertif
+     * @param  \App\Models\QrGenerator  $qrGenerator
      * @return \Illuminate\Http\Response
      */
-    public function edit(sertif $sertif)
+    public function edit(QrGenerator $qrGenerator)
     {
-        return Inertia::render('Sertif/Edit');
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\sertif  $sertif
+     * @param  \App\Models\QrGenerator  $qrGenerator
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, sertif $sertif)
+    public function update(Request $request, QrGenerator $qrGenerator)
     {
         //
     }
@@ -77,10 +84,10 @@ class SertifController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\sertif  $sertif
+     * @param  \App\Models\QrGenerator  $qrGenerator
      * @return \Illuminate\Http\Response
      */
-    public function destroy(sertif $sertif)
+    public function destroy(QrGenerator $qrGenerator)
     {
         //
     }
