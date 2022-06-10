@@ -18,6 +18,15 @@ defineProps({ Allusers: Array });
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="px-5 py-6 lg:py-12 lg:px-0 sm:rounded-lg">
           <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <!-- button create -->
+            <div class="">
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              >
+                Default
+              </button>
+            </div>
             <div
               class="relative overflow-x-auto shadow-md rounded-md sm:rounded-lg"
             >
