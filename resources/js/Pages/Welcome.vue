@@ -105,13 +105,13 @@ const NavbarResponsiveOpen = ref(false);
               Log in sebagai Admin
             </Link>
 
-            <!-- <Link
+            <Link
               v-if="canRegister"
               :href="route('register')"
               class="font-semibold px-5 py-2 mx-2 mt-2 ml-4 text-sm lg:text-md rounded-md dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700"
             >
               Register
-            </Link> -->
+            </Link>
           </template>
         </div>
       </div>
@@ -181,7 +181,6 @@ const NavbarResponsiveOpen = ref(false);
       <div>
         <div class="flex justify-center">
           <div>{{ qrCode }}</div>
-          <img src="{{url('/qrcode.svg')}}" alt="" />
         </div>
       </div>
     </div>

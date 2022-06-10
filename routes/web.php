@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\QRcontroller;
 use App\Http\Controllers\QrController as ControllersQrController;
 use App\Http\Controllers\SertifController;
@@ -27,7 +28,7 @@ Route::get('/', function () {
     // $qrcode = new Generator;
     // $data= $qrcode->size(200)->generate('Make a qrcode without Laravel!');
 
-    $qrCode = (String)QrCode::format('svg')->margin(4)->size(400)->errorCorrection('H')->generate('https://heroicons.dev/', '../public/qrcode.svg');
+    $qrCode = (String)QrCode::format('svg')->margin(4)->size(400)->generate('https://heroicons.dev/', '../public/qrcode.svg');
 
     return Inertia::render('Welcome', [
         'qrCode'=> $qrCode,
@@ -55,3 +56,5 @@ Route::middleware(['auth:sanctum', 'verified'])->resource('QrGenerator', QRcontr
 Route::middleware(['auth:sanctum', 'verified'])->resource('users', UserController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->resource('sertif',SertifController::class);
+
+Route::middleware(['auth:sanctum', 'verified'])->resource('kegiatan',KegiatanController::class);

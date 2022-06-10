@@ -15,8 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return Inertia::render('User/Index', compact('users'));
+        $Allusers = User::all();
+        return Inertia::render('User/Index', compact('Allusers'));
     }
 
     /**
@@ -60,7 +60,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return Inertia::render('User/Edit', compact('user'));
+        return Inertia::render('User/Edit');
     }
 
     /**

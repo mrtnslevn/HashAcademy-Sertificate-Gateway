@@ -12,7 +12,8 @@ const NavbarResponsiveOpen = ref(false);
 <template>
   <Head title="Cari Sertifikat Anda" />
 
-  <nav class="bg-white shadow dark:bg-gray-800">
+  <nav class="dark:bg-gray-800">
+    <!-- bg-white shadow dark:bg-gray-800 -->
     <div class="container px-11 py-6 mx-auto">
       <div class="md:flex md:items-center md:justify-between">
         <div class="flex items-center justify-between">

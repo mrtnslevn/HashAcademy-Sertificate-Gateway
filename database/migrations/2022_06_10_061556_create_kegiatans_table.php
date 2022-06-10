@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TableSertif extends Migration
+class CreateKegiatansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class TableSertif extends Migration
      */
     public function up()
     {
-        Schema::create('sertifikat', function (Blueprint $table) {
+        Schema::create('kegiatans', function (Blueprint $table) {
             $table->id();
-            $table->string('ID_sertifikat');
-            $table->string('name');
+            $table->string('nama');
+            $table->text('deskripsi');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ class TableSertif extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('kegiatans');
     }
 }

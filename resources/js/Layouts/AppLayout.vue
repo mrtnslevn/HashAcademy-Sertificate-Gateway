@@ -76,6 +76,12 @@ const logout = () => {
                 >
                   Sertifikat
                 </JetNavLink>
+                <JetNavLink
+                  :href="route('kegiatan.index')"
+                  :active="route().current('kegiatan.*')"
+                >
+                  Daftar Kegiatan
+                </JetNavLink>
               </div>
             </div>
 
@@ -290,12 +296,6 @@ const logout = () => {
         >
           <div class="pt-2 pb-3 space-y-1">
             <JetResponsiveNavLink
-              :href="route('dashboard')"
-              :active="route().current('dashboard')"
-            >
-              Dashboard
-            </JetResponsiveNavLink>
-            <JetResponsiveNavLink
               :href="route('users.index')"
               :active="route().current('users.*')"
             >
@@ -306,6 +306,12 @@ const logout = () => {
               :active="route().current('sertif.*')"
             >
               Sertifikat
+            </JetResponsiveNavLink>
+            <JetResponsiveNavLink
+              :href="route('kegiatan.index')"
+              :active="route().current('kegiatan.*')"
+            >
+              Daftar Kegiatan
             </JetResponsiveNavLink>
           </div>
 
