@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Dotenv\Parser\Value;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -58,4 +59,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function getCreatedAtAttribute($value){
+        return now()->parse($value)->format('d F Y , H:i:s');
+    }
 }

@@ -16,7 +16,7 @@ class KegiatanController extends Controller
      */
     public function index()
     {
-        $kegiatans = Kegiatan::latest('created_at')->paginate(10);
+        $kegiatans = Kegiatan::orderBy('created_at')->paginate(3);
 
         return Inertia::render('Kegiatan/Index', ['kegiatans'=> $kegiatans]);
     }

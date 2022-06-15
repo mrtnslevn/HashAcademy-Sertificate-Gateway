@@ -2,6 +2,7 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import Pagination from "@/Layouts/Pagination.vue";
+import Page from "../../Layouts/Page.vue";
 // defineProps({ Allusers: String });
 defineProps({ kegiatans: Object });
 </script>
@@ -18,6 +19,28 @@ defineProps({ kegiatans: Object });
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="px-5 py-6 lg:py-12 lg:px-0 sm:rounded-lg">
           <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <!-- button create -->
+            <div class="flex justify-end">
+              <Link
+                :href="route('kegiatan.create')"
+                type="button"
+                class="flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              >
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                Buat Baru
+              </Link>
+            </div>
             <div
               class="relative overflow-x-auto shadow-md rounded-md sm:rounded-lg"
             >
@@ -93,6 +116,7 @@ defineProps({ kegiatans: Object });
               </table>
             </div>
             <Pagination />
+            <!-- <Page :links="kegiatans.links" /> -->
           </div>
         </div>
       </div>

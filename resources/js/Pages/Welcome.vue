@@ -5,7 +5,7 @@ import AppBawah from "../Layouts/AppBawah.vue";
 defineProps({
   canLogin: Boolean,
   canRegister: Boolean,
-  qrCode: String,
+  CodeQR: String,
 });
 
 const NavbarResponsiveOpen = ref(false);
@@ -180,7 +180,7 @@ const NavbarResponsiveOpen = ref(false);
 
       <div>
         <div class="flex justify-center">
-          <div>{{ qrCode }}</div>
+          <div>{{ CodeQR }}</div>
         </div>
       </div>
     </div>

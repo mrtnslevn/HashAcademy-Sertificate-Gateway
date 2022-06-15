@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kegiatan;
-use App\Models\sertif;
 use App\Models\sertifikat;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class SertifController extends Controller
+class SertifikatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -45,10 +43,10 @@ class SertifController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\sertif  $sertif
+     * @param  \App\Models\sertifikat  $sertifikat
      * @return \Illuminate\Http\Response
      */
-    public function show(sertif $sertif)
+    public function show(sertifikat $sertifikat)
     {
         //
     }
@@ -56,22 +54,22 @@ class SertifController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\sertif  $sertif
+     * @param  \App\Models\sertifikat  $sertifikat
      * @return \Illuminate\Http\Response
      */
-    public function edit(sertif $sertif)
+    public function edit(sertifikat $sertifikat)
     {
-        return Inertia::render('Sertif/Edit');
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\sertif  $sertif
+     * @param  \App\Models\sertifikat  $sertifikat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, sertif $sertif)
+    public function update(Request $request, sertifikat $sertifikat)
     {
         //
     }
@@ -79,10 +77,10 @@ class SertifController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\sertif  $sertif
+     * @param  \App\Models\sertifikat  $sertifikat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(sertif $sertif)
+    public function destroy(sertifikat $sertifikat)
     {
         //
     }

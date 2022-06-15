@@ -17,7 +17,7 @@ class KegiatanFactory extends Factory
     public function definition()
     {
         return [
-            'nama'=> $this->faker->title(),
+            'nama'=> $this->faker->name(),
             'deskripsi'=> $this->faker->text(),
         ];
     }

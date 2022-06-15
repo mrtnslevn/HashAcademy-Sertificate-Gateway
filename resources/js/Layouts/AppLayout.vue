@@ -71,7 +71,7 @@ const logout = () => {
                   Users
                 </JetNavLink>
                 <JetNavLink
-                  :href="route('sertif.index')"
+                  :href="route('sertifikat.index')"
                   :active="route().current('sertif.*')"
                 >
                   Sertifikat
@@ -302,7 +302,7 @@ const logout = () => {
               Users
             </JetResponsiveNavLink>
             <JetResponsiveNavLink
-              :href="route('sertif.index')"
+              :href="route('sertifikat.index')"
               :active="route().current('sertif.*')"
             >
               Sertifikat
