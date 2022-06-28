@@ -2,7 +2,6 @@
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { Link } from "@inertiajs/inertia-vue3";
 import Pagination from "@/Layouts/Pagination.vue";
-import Page from "../../Layouts/Page.vue";
 // defineProps({ Allusers: String });
 defineProps({ kegiatans: Object });
 </script>
@@ -19,6 +18,9 @@ defineProps({ kegiatans: Object });
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="px-5 py-6 lg:py-12 lg:px-0 sm:rounded-lg">
           <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <!-- <div v-if="$page.props.flash.message">
+              {{ $page.props.flash.message }}
+            </div> -->
             <!-- button create -->
             <div class="flex justify-end">
               <Link
@@ -58,6 +60,9 @@ defineProps({ kegiatans: Object });
                     </th>
                     <th scope="col" class="px-6 py-3">
                       <span class="sr-only">Edit</span>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      <span class="sr-only">Hapus</span>
                     </th>
                   </tr>
                 </thead>
@@ -109,6 +114,29 @@ defineProps({ kegiatans: Object });
                             ></path></svg
                           >Edit</Link
                         >
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="">
+                        <Link
+                          method="delete"
+                          :href="route('kegiatan.destroy', kegiatan.id)"
+                          class="flex focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                        >
+                          <svg
+                            class="w-4 h-4 mr-3"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                          Hapus
+                        </Link>
                       </div>
                     </td>
                   </tr>

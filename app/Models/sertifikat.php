@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class sertifikat extends Model
 {
-    use HasFactory;
+
+    protected $table = "sertifikats";
 
     protected $fillable = [
         'Nama_Peserta',
@@ -15,6 +16,9 @@ class sertifikat extends Model
         'kode_unik',
         'sertifikat_path'
     ];
+    
+
+    use HasFactory;
 
 
 

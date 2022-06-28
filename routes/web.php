@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\QRcontroller;
 //use App\Http\Controllers\QrController as ControllersQrController;
-use App\Http\Controllers\SertifController;
+use App\Http\Controllers\SertifikatController;
 use App\Http\Controllers\UserController;
+use App\Models\Post;
 use Database\Factories\SertifikatFactory;
 // use BaconQrCode\Encoder\QrCode;
 use Illuminate\Foundation\Application;
@@ -46,16 +48,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+
+    Route::resource('users', UserController::class);
+    Route::resource('sertifikat', SertifikatController::class);
+    Route::resource('kegiatan', KegiatanController::class);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->resource('QrGenerator', QRcontroller::class);
-//qrcode route
-// Route::get('/QrCode/')->resource('QR', QRcontroller::class);
-
-//users routes
-
-Route::middleware(['auth:sanctum', 'verified'])->resource('users', UserController::class);
-
-Route::middleware(['auth:sanctum', 'verified'])->resource('sertifikat',SertifController::class);
-
-Route::middleware(['auth:sanctum', 'verified'])->resource('kegiatan',KegiatanController::class);
+Route::resource('posts', PostController::class);

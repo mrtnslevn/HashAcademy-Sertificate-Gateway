@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kegiatan;
-use App\Models\sertif;
 use App\Models\sertifikat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class SertifController extends Controller
@@ -17,7 +17,7 @@ class SertifController extends Controller
      */
     public function index()
     {
-        $sertifs = sertifikat::orderBy('created_at')->paginate(10);
+        $sertifs = sertifikat::orderBy('created_at')->paginate(5);
         return Inertia::render('Sertif/Index', ['sertifs'=> $sertifs]);
     }
 
@@ -39,7 +39,15 @@ class SertifController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Nama_Peserta'=>'required',
+            'Nama_Kegiatan'=>'required',
+            'kode_unik'=>'required',
+            'sertifikat_path'=>'required'
+        ]);
+
+        sertifikat::create($request->all());
+        return Redirect::route('sertifikat.index')->with('message', 'Data Berhasil Disimpan!');
     }
 
     /**
@@ -48,7 +56,7 @@ class SertifController extends Controller
      * @param  \App\Models\sertif  $sertif
      * @return \Illuminate\Http\Response
      */
-    public function show(sertif $sertif)
+    public function show(sertifikat $sertifikat)
     {
         //
     }

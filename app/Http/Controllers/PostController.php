@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kegiatan;
-use Dotenv\Validator;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
-class KegiatanController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,8 @@ class KegiatanController extends Controller
      */
     public function index()
     {
-        $kegiatans = Kegiatan::latest()->paginate(10);
-
-        return Inertia::render('Kegiatan/Index', ['kegiatans'=> $kegiatans]);
+        $posts = Post::latest()->paginate(10);
+        return Inertia::render('Post/Index', ['posts' => $posts]);
     }
 
     /**
@@ -29,7 +27,7 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Kegiatan/Create');
+        return Inertia::render('Post/Create');
     }
 
     /**
@@ -40,24 +38,22 @@ class KegiatanController extends Controller
      */
     public function store(Request $request)
     {
-
-        $request->validate([
-            'nama'=> 'required|max:90',
-            'deskripsi'=> 'required'
-        ]);
-
-        Kegiatan::create($request->all());
-        return Redirect::route('kegiatan.index')->with('message','data berhasil dihapus');
-
+        Post::create(
+            Request::validate([
+                'title'=> ['required','max:90'],
+                'description'=> ['required']
+            ])
+            );
+            return Redirect::route('posts.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Kegiatan  $kegiatan
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Kegiatan $kegiatan)
+    public function show(Post $post)
     {
         //
     }
@@ -65,16 +61,16 @@ class KegiatanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Kegiatan  $kegiatan
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kegiatan $kegiatan)
+    public function edit(Post $post)
     {
-        return Inertia::render('Kegiatan/Edit',[
-            'kegiatan' =>[
-                'id'=> $kegiatan->id,
-                'nama'=>$kegiatan->nama,
-                'deskripsi'=>$kegiatan->deskripsi
+        return Inertia::render('Post/Edit', [
+            'post' => [
+                'id' => $post->id,
+                'title' => $post->title,
+                'description' => $post->description
             ]
         ]);
     }
@@ -83,25 +79,28 @@ class KegiatanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Kegiatan  $kegiatan
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kegiatan $kegiatan)
+    public function update(Request $request, Post $post)
     {
-
-
+        $data = Request::validate([
+            'title' => ['required', 'max:90'],
+            'description' => ['required'],
+        ]);
+    $post->update($data);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Kegiatan  $kegiatan
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kegiatan $kegiatan)
+    public function destroy(Post $post)
     {
-        $kegiatan->delete();
+        $post->delete();
 
-        return Redirect::route('kegiatan.index')->with('message','data berhasil dihapus');
+        return Redirect::route('posts.index');
     }
 }

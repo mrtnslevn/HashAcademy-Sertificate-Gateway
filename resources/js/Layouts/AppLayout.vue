@@ -72,7 +72,7 @@ const logout = () => {
                 </JetNavLink>
                 <JetNavLink
                   :href="route('sertifikat.index')"
-                  :active="route().current('sertif.*')"
+                  :active="route().current('sertifikat.*')"
                 >
                   Sertifikat
                 </JetNavLink>
@@ -303,7 +303,7 @@ const logout = () => {
             </JetResponsiveNavLink>
             <JetResponsiveNavLink
               :href="route('sertifikat.index')"
-              :active="route().current('sertif.*')"
+              :active="route().current('sertifikat.*')"
             >
               Sertifikat
             </JetResponsiveNavLink>
@@ -426,7 +426,10 @@ const logout = () => {
       </nav>
 
       <!-- Page Heading -->
-      <header v-if="$slots.header" class="bg-white dark:bg-gray-800 shadow-lg">
+      <header
+        v-if="$slots.header"
+        class="bg-white dark:bg-gray-800 shadow-lg text-slate-300"
+      >
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <slot name="header" />
         </div>

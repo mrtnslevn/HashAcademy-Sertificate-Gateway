@@ -17,7 +17,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
         <div class="bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
           <div class="flex justify-end pb-4">
             <a
-              :href="route('sertif.create')"
+              :href="route('sertifikat.create')"
               class="btn btn-info hover:bg-cyan-700 hover:border-cyan-700"
               ><svg
                 class="w-5 h-5 mr-3"
@@ -74,7 +74,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
                   <td>14/06/2022</td>
                   <th>
                     <router-link
-                      :href="route('sertif.edit')"
+                      :href="route('sertifikat.edit')"
                       class="btn btn-ghost px-5 py-3"
                     >
                       edit<svg
